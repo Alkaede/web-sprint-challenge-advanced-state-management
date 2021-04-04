@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Smurf from './Smurf';
 
 const SmurfList = ()=> {
@@ -16,11 +17,18 @@ const SmurfList = ()=> {
     }
 
     return(<div className="listContainer">
-        <Smurf smurf={testSmurf}/>
+        {Smurf.map((smurf) => {
+        return <Smurf smurf={smurf}/> })}
     </div>);
 }
 
-export default SmurfList;
+const mapStateToProps = (state) => {
+    return {
+      smurfs: state.smurfs,
+    }
+  }
+
+  export default connect(mapStateToProps, {})(SmurfList);
 
 //Task List:
 //1. Connect the smurfs and loading state values to the SmurfList component.
