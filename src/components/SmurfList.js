@@ -1,7 +1,7 @@
 import React from 'react';
 import Smurf from './Smurf';
 
- const SmurfList = ()=> {
+const SmurfList = ()=> {
     const isLoading = false;
     const testSmurf = {
         id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
